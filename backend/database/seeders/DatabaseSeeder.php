@@ -44,97 +44,123 @@ class DatabaseSeeder extends Seeder
             $genreModels[$name] = Genre::firstOrCreate(['name' => $name]);
         }
 
-        // 3. Seed Movies (Legal test streams)
+        // 3. Seed Open Movies
         $m1 = Movie::firstOrCreate(
-            ['title' => 'Tears of Steel: Cyber Horizon'],
+            ['title' => 'Big Buck Bunny'],
             [
-                'description' => 'In a dystopian cyberpunk future in Amsterdam, a team of freedom fighters and tech sorcerers struggle to rescue humanity from rogue cybernetic sentinels.',
-                'poster' => 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80',
-                'backdrop' => 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80',
-                'trailer_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
-                'video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
-                'release_date' => '2024',
-                'duration_minutes' => 118,
-                'rating' => 4.9,
-                'age_rating' => '16+',
-                'language' => 'English / Dutch',
-                'country' => 'Netherlands / USA',
+                'description' => 'A giant rabbit named Big Buck Bunny enjoys a peaceful day in the forest until three mischievous rodents disturb the peace.',
+                'poster' => 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=600&q=80',
+                'backdrop' => 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80',
+                'trailer_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                'video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                'release_date' => '2008',
+                'duration_minutes' => 10,
+                'rating' => 4.8,
+                'age_rating' => 'ALL',
+                'language' => 'English',
+                'country' => 'Netherlands',
                 'is_published' => true,
                 'is_trending' => true,
                 'is_featured' => true,
-                'views_count' => 12450,
+                'views_count' => 0,
             ]
         );
-        $m1->genres()->sync([$genreModels['Sci-Fi']->id, $genreModels['Action']->id, $genreModels['Cyberpunk']->id]);
+        $m1->genres()->sync([
+            $genreModels['Animation']->id,
+            $genreModels['Adventure']->id
+        ]);
 
         $m2 = Movie::firstOrCreate(
-            ['title' => 'Nebula Odyssey'],
+            ['title' => 'Sintel'],
             [
-                'description' => 'A deep-space surveyor discovers an enigmatic ancient derelict station pulsating with alien quantum signatures on the edge of the galaxy.',
-                'poster' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
-                'backdrop' => 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
-                'trailer_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-                'video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-                'release_date' => '2024',
-                'duration_minutes' => 134,
-                'rating' => 4.7,
-                'age_rating' => '13+',
+                'description' => 'A young warrior named Sintel begins a dangerous journey to find a dragon she has grown attached to.',
+                'poster' => 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80',
+                'backdrop' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80',
+                'trailer_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+                'video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+                'release_date' => '2010',
+                'duration_minutes' => 15,
+                'rating' => 4.9,
+                'age_rating' => 'PG',
                 'language' => 'English',
-                'country' => 'USA',
+                'country' => 'Netherlands',
+                'is_published' => true,
+                'is_trending' => true,
+                'is_featured' => true,
+                'views_count' => 0,
+            ]
+        );
+        $m2->genres()->sync([
+            $genreModels['Animation']->id,
+            $genreModels['Fantasy']->id,
+            $genreModels['Adventure']->id
+        ]);
+
+        $m3 = Movie::firstOrCreate(
+            ['title' => 'Tears of Steel'],
+            [
+                'description' => 'A group of warriors and scientists reunite in Amsterdam to save the world from destructive robots from the future.',
+                'poster' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+                'backdrop' => 'https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80',
+                'trailer_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+                'video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+                'release_date' => '2012',
+                'duration_minutes' => 12,
+                'rating' => 4.7,
+                'age_rating' => 'PG-13',
+                'language' => 'English',
+                'country' => 'Netherlands',
                 'is_published' => true,
                 'is_trending' => true,
                 'is_featured' => false,
-                'views_count' => 9820,
+                'views_count' => 0,
             ]
         );
-        $m2->genres()->sync([$genreModels['Sci-Fi']->id, $genreModels['Adventure']->id]);
+        $m3->genres()->sync([
+            $genreModels['Sci-Fi']->id,
+            $genreModels['Action']->id
+        ]);
 
-        // 4. Seed Series, Seasons, Episodes
-        $s1 = Series::firstOrCreate(
-            ['title' => 'Chronicles of the Wasteland'],
+        $m4 = Movie::firstOrCreate(
+            ['title' => 'Elephants Dream'],
             [
-                'description' => 'A gritty post-apocalyptic saga following survivors navigating electromagnetic storms and warring factions to discover an underground sanctuary.',
-                'poster' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
-                'backdrop' => 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80',
-                'trailer_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
-                'release_date' => '2024',
-                'rating' => 4.9,
+                'description' => 'Two characters explore a strange surreal world filled with mysterious machines and unexpected discoveries.',
+                'poster' => 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=600&q=80',
+                'backdrop' => 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80',
+                'trailer_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                'video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                'release_date' => '2006',
+                'duration_minutes' => 11,
+                'rating' => 4.6,
+                'age_rating' => 'PG',
                 'language' => 'English',
-                'country' => 'USA',
+                'country' => 'Netherlands',
                 'is_published' => true,
-                'is_trending' => true,
-                'is_featured' => true,
-                'views_count' => 21000,
+                'is_trending' => false,
+                'is_featured' => false,
+                'views_count' => 0,
             ]
         );
-        $s1->genres()->sync([$genreModels['Sci-Fi']->id, $genreModels['Drama']->id]);
+        $m4->genres()->sync([
+            $genreModels['Animation']->id,
+            $genreModels['Sci-Fi']->id
+        ]);
 
-        $season1 = Season::firstOrCreate(
-            ['series_id' => $s1->id, 'season_number' => 1],
-            ['title' => 'Season 1: Fallout', 'release_date' => '2024']
-        );
-
-        Episode::firstOrCreate(
-            ['season_id' => $season1->id, 'episode_number' => 1],
-            [
-                'series_id' => $s1->id,
-                'title' => 'Episode 1: The Ash Awakening',
-                'description' => 'Nolan awakens in an abandoned fallout bunker only to find strange electromagnetic signals calling from the north.',
-                'duration_minutes' => 48,
-                'thumbnail' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80',
-                'video_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
-                'release_date' => '2024-01-10',
-            ]
-        );
+        // No fake series/seasons/episodes are seeded.
+        // Series content can be added later from verified legal sources.
 
         // 5. Seed Broadcast Notification
         Notification::firstOrCreate(
-            ['title' => 'Welcome to CineHub Cinema'],
             [
-                'user_id' => 0,
-                'message' => 'Experience high-definition movies and series with seamless video playback, watchlists, and offline synchronization.',
+                'user_id' => $user->id,
+                'title' => 'Welcome to CineHub',
+            ],
+            [
+                'message' => 'Welcome to CineHub. Explore openly licensed movies and discover new content.',
                 'type' => 'system',
                 'is_read' => false,
+                'action_content_id' => null,
+                'action_content_type' => null,
             ]
         );
     }

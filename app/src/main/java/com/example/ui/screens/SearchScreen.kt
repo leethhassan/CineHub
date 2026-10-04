@@ -37,7 +37,7 @@ fun SearchScreen(
     val filter by viewModel.searchFilter.collectAsStateWithLifecycle()
     val results by viewModel.searchResults.collectAsStateWithLifecycle()
 
-    val popularSuggestions = listOf("Tears of Steel", "Sci-Fi", "Dragon", "Bunny", "Action", "Fallout", "Cyberpunk", "Tokyo")
+    val popularSuggestions = listOf("Big Buck Bunny", "Sintel", "Tears of Steel", "Elephants Dream", "Animation", "Adventure", "Sci-Fi", "Open Movies")
 
     Column(
         modifier = Modifier
