@@ -251,7 +251,7 @@ fun VideoPlayerView(
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "1080p Ultra HD • Stereo",
+                                text = "Online Playback • Stereo",
                                 color = CineHubAccent,
                                 fontSize = 11.sp
                             )

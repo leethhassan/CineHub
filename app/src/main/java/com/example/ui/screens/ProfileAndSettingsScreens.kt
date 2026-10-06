@@ -389,7 +389,7 @@ fun SettingsScreen(
                     }
                     Button(
                         onClick = {
-                            selectedQuality = if (selectedQuality == "1080p Full HD") "4K Ultra HD" else "1080p Full HD"
+                            selectedQuality = if (selectedQuality == "Auto") "Standard" else "Auto"
                         },
                         colors = ButtonDefaults.buttonColors(containerColor = CineHubSurfaceVariant)
                     ) {

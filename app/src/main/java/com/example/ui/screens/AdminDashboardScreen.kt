@@ -100,7 +100,7 @@ fun AdminDashboardScreen(
                         videoUrl = url.ifBlank { "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" },
                         releaseDate = "2024",
                         duration = duration,
-                        rating = 4.8f,
+                        rating = 0.0f,
                         genres = listOf(1, 2)
                     ) {
                         showAddMovieSuccessDialog = true

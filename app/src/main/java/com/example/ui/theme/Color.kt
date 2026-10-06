@@ -13,7 +13,7 @@ val CineHubBorder = Color(0xFF263047)
 val CineHubPrimary = Color(0xFFE50914) // Cinema Crimson Red
 val CineHubPrimaryVariant = Color(0xFFFF2E4C)
 val CineHubSecondary = Color(0xFFFFB703) // Gold Star Rating
-val CineHubAccent = Color(0xFF00B4D8) // Electric Cyan for HD/4K tags
+val CineHubAccent = Color(0xFF00B4D8) // Electric Cyan accent
 
 // Text & Surfaces
 val CineHubTextPrimary = Color(0xFFF8FAFC)

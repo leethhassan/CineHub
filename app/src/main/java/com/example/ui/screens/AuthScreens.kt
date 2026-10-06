@@ -240,7 +240,7 @@ fun RegisterScreen(
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "Join CineHub to enjoy unlimited entertainment in 4K",
+                text = "Join CineHub to discover open movies and build your personal watchlist",
                 color = CineHubTextSecondary,
                 fontSize = 14.sp
             )

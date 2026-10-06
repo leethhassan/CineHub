@@ -171,7 +171,7 @@ fun OnboardingScreen(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Stream thousands of licensed titles in 4K Ultra HD. Resume right where you left off, create custom watchlists, and enjoy seamless entertainment.",
+                    text = "Discover open movies, watch online, resume where you left off, and build your personal watchlist.",
                     color = CineHubTextSecondary,
                     fontSize = 14.sp,
                     textAlign = TextAlign.Center,

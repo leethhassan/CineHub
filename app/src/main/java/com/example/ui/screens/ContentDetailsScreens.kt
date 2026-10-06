@@ -149,18 +149,11 @@ fun MovieDetailsScreen(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Default.Star, contentDescription = null, tint = CineHubSecondary, modifier = Modifier.size(16.dp))
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text(
-                            text = String.format("%.1f", movie.rating),
-                            color = Color.White,
-                            fontSize = 13.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-                    Text("•", color = CineHubTextMuted)
-                    Text(movie.releaseDate, color = CineHubTextSecondary, fontSize = 13.sp)
+                    Text(
+                        text = movie.releaseDate,
+                        color = CineHubTextSecondary,
+                        fontSize = 13.sp
+                    )
                     Text("•", color = CineHubTextMuted)
                     Text("${movie.durationMinutes} min", color = CineHubTextSecondary, fontSize = 13.sp)
                     Text("•", color = CineHubTextMuted)
@@ -500,12 +493,6 @@ fun SeriesDetailsScreen(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Default.Star, contentDescription = null, tint = CineHubSecondary, modifier = Modifier.size(16.dp))
-                        Spacer(modifier = Modifier.width(3.dp))
-                        Text(String.format("%.1f", series.rating), color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold)
-                    }
-                    Text("•", color = CineHubTextMuted)
                     Text("${seasons.size} Seasons", color = CineHubTextSecondary, fontSize = 13.sp)
                     Text("•", color = CineHubTextMuted)
                     Text(series.releaseDate, color = CineHubTextSecondary, fontSize = 13.sp)

@@ -181,8 +181,8 @@ class CineHubViewModel(
             val movie = MovieEntity(
                 title = title,
                 description = description,
-                poster = poster.ifBlank { "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80" },
-                backdrop = backdrop.ifBlank { "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80" },
+                poster = poster.trim(),
+                backdrop = backdrop.trim(),
                 trailerUrl = videoUrl,
                 videoUrl = videoUrl,
                 releaseDate = releaseDate,
