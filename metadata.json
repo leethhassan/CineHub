@@ -1,0 +1,6 @@
+{
+  "name": "CineHub",
+  "description": "Production-ready streaming movies and series application with full catalog, video player, watchlist, continue watching, ratings, and management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
